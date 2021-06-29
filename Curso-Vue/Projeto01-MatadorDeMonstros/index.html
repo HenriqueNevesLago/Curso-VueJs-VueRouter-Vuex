@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/TitleAndLifeBar.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Matador de Monstros</title>
+  </head>
+  <body>
+    <div id="Container">
+      <div class="container">
+        <div class="titleJogador">
+          <p style="font-size: 25px">Jogador</p>
+          <div :class="[border]">
+            <div :class="[progresso]" :style="{width}"></div>
+          </div>
+        </div>
+        <div class="titleMonstro">
+          <p style="font-size: 25px">Monstro</p>
+          <div :class="[border]">
+            <div :class="[progresso]" :style="{width}"></div>
+          </div>
+        </div>
+    </div>
+  </body>
+
+  <script src="./js/script.js"></script>
+</html>

@@ -1,0 +1,39 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{contador}}</p>
+    <!-- Por padrão, o Vue já passa um evento ($event) por parâmentro, porem, caso deseje enviar algo a mais 
+    no mesmo parâmetro é obrigatório especificar o $event (como no exemplo abaixo), caso for necessitar do evento. -->
+    <button v-on:click="somar(5, $event)">Somar 1</button>
+    <p v-on:mousemove="atualizarXY">Mouse: {{x}} e {{y}}
+        <!-- Stop para a propagação do evento no local especificado -->
+        <span  v-on:mousemove.stop="">Parar aqui!!</span>
+    </p>
+    <!-- prevent ou event.preventdefalt() impede o funcionamento padrão de um campo, botão, etc-->
+    <a v-on:click.prevent href="http://google.com">Google</a>
+</div>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            contador: 0,
+            x: 0,
+            y: 0,
+        },
+        methods: {
+            somar(passo, evento) {
+                console.log(evento);
+                this.contador += passo
+            },
+            atualizarXY(event) {
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            parar(event) {
+                event.stopPropagation()
+            }
+        }
+    })
+</script>

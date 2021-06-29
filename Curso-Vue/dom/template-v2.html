@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{titulo}}</p>
+    <p @click="saudacao()">{{ saudacao() }}</p>
+</div>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            titulo: 'Usando VueJS!!'
+        },
+        methods: {
+            saudacao()  {
+                this.titulo = 'Boa semana'
+            
+        }
+    }
+    })
+</script>

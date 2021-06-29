@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{contador}}</p>
+    <p>{{contador > 10 ? 'Parabéns' : ''}}</p>
+    <!-- Por padrão, o Vue já passa um evento ($event) por parâmentro, porem, caso deseje enviar algo a mais 
+    no mesmo parâmetro é obrigatório especificar o $event (como no exemplo abaixo), caso for necessitar do evento. -->
+    <button v-on:click="somar">Somar 1</button>
+</div>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            contador: 0,
+        },
+        methods: {
+            somar() {
+                this.contador ++
+            },
+        }
+    })
+</script>

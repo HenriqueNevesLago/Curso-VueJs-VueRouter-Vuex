@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{titulo}}</p>
+    <p>{{ saudacao() }}</p>
+    <!-- v-bind  faz com que uma teg HTML seja interpretada pola Vue., pode ser subtituida apenas por :. Ex: :href-->
+    <a v-bind:href="link">Google</a>
+</div>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            titulo: 'Usando VueJS!!',
+            link: 'http://google.com.br'
+        },
+        methods: {
+            saudacao: function()  {
+                return this.titulo
+            
+        }
+    }
+    })
+</script>

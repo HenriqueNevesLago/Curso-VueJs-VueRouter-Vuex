@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+
+    background-color: #fafafa;
+    padding: 30px;
+}
+.titleJogador {
+    margin-right: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titleMonstro {
+    margin-left: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.border {
+	margin-top: 2%;
+	border: 1px solid #5c5956;
+	border-radius: 2px;
+	height: 15px;
+	width: 400px;
+}
+.progresso {
+	background-color: green;
+	height: 100%;
+}

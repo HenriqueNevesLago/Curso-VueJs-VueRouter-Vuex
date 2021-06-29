@@ -1,0 +1,73 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<div id="desafio">
+  <!-- 1) Ligue o botão para alternar a exibição dos dois
+    parágrafos. Use ambos v-if e v-show e inspecione os elementos
+    para ver a diferença -->
+  <h2>#01</h2>
+  <div>
+    <button @click="mostrar = !mostrar">{{mostrar ? 'frase1' : 'frase2'}}</button>
+    <p v-if="mostrar">Você quer me ver ...</p>
+    <p v-else>...ou eu</p>
+    <p v-show="mostrar">Você quer me ver ...</p>
+    <p v-show="!mostrar">...ou eu</p>
+  </div>
+
+  <!-- 2) Exiba em uma <ul> um array de elementos da sua escolha.
+    Imprima também o índice de cada elemento. -->
+  <h2>#02</h2>
+  <ul>
+    <li v-for="(array, index) in arrays">{{index}} = {{array}}</li>
+  </ul>
+  
+  <!-- 3) Imprimir todos os pares de valor-chave do objeto a seguir:
+    {
+			titulo: 'O Senhor dos Anéis',
+			autor: 'J.R.R. Tolkiens',
+			volume: '3'
+		}
+    Imprima também o índice de cada item. -->
+  <h2>#03</h2>
+  <ul>
+    <li v-for="(umLivro, chave, index) in livro">{{index}}-{{chave}} = {{umLivro}}</li>
+  </ul>
+  
+  <!-- 4) Imprima o seguinte objeto (somente os valores) e
+    também crie um loop aninhado para o array:
+    {
+			id: 10,
+			nome: 'Maria',
+			notas: [7.67, 8.33, 6.98, 9.21]
+		}
+    (dica: use v-for e v-if na resolução) -->
+  <h2>#04</h2>
+  <ul>
+    <li v-for="(aluno) in alunos">
+      <template v-if="!Array.isArray(aluno)">
+        {{aluno}}
+      </template>
+      <template v-if="Array.isArray(aluno)">
+        <li v-for="nota in alunos.notas">{{nota}}</li>
+      </template>
+    </li>
+    </ul>
+</div>
+<script>
+  new Vue({
+    el:'#desafio',
+	  data: {
+		  arrays: ['Pedro', 'Bia', 'Ana', 'Rebeca'],
+		  livro: {
+			  titulo: 'O Senhor dos Anéis',
+			  autor: 'J.R.R. Tolkiens',
+			  volume: '3'
+		  },
+		  alunos: {
+			  id: 10,
+			  nome: 'Maria',
+			  notas: [7.67, 8.33, 6.98, 9.21]
+		  },
+		mostrar: true,
+	}
+});
+</script>

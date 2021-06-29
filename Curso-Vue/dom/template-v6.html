@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<div id="app">
+    <!-- v-once desabilita a função de auto atualização de informações em tempo real -->
+    <p v-once>{{titulo}}</p>
+    <p>{{ saudacao() }}</p>
+    <!-- v-bind  faz com que uma teg HTML seja interpretada pola Vue., pode ser subtituida apenas por :. Ex: :href-->
+    <a v-bind:href="link">Google</a>
+
+    //v-html permite a introdução de códigos HTML
+    <p v-html="linkHtml"></p>
+</div>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            titulo: 'Usando VueJS!!',
+            link: 'http://google.com.br',
+            linkHtml: '<a href="http://google.com.br">Google</a>'
+        },
+        methods: {
+            saudacao: function()  {
+                this.titulo = "Bom dia!!"
+                return this.titulo
+            
+        }
+    }
+    })
+</script>

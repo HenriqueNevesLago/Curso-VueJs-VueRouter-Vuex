@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<div id="app">
+    <input type="text" v-on:input="alterarTitulo">
+    <p>{{titulo}}</p>
+    <p>{{eric}}</p>
+    <a @Click="alterarTitulo()">Valor</a>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            eric: 54,
+            titulo: "usando VueJS 2!"
+        },
+        methods: {
+            alterarTitulo() {
+                this.titulo = "Henrique"
+            }
+        },
+        watch: {
+            titulo() {
+                this.eric=55
+            }
+        }
+    })
+</script>
