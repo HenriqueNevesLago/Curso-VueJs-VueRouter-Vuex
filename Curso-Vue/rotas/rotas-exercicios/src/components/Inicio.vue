@@ -1,7 +1,7 @@
 <template>
-  <div class="início">
-    <h2>Usuário</h2>
-  </div>
+    <div class="inicio">
+        <h2>Início</h2>
+    </div>
 </template>
 
 <script>
