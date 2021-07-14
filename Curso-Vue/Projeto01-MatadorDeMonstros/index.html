@@ -14,15 +14,33 @@
         <div class="titleJogador">
           <p style="font-size: 25px">Jogador</p>
           <div :class="[border]">
-            <div :class="[progresso]" :style="{width}"></div>
+            <div :class="[progresso]" :style="{width: widthPlayer + '%'}"></div>
           </div>
+          <p>{{widthPlayer.toFixed(2) + '%'}}</p>
         </div>
         <div class="titleMonstro">
           <p style="font-size: 25px">Monstro</p>
           <div :class="[border]">
-            <div :class="[progresso]" :style="{width}"></div>
+            <div :class="[progresso]" :style="{width: widthMonster + '%'}"></div>
           </div>
+          <p>{{widthMonster.toFixed(2) + '%'}}</p>
         </div>
+    </div>
+
+    <div class="container">
+        <button @click="attack"
+            class="btn attack">Ataque</button>
+        <button @click="EspecialAttack"
+            class="btn especial-attack">Ataque Especial</button>
+        <button 
+            class="btn heal">Curar</button>
+        <button 
+            class="btn give-up">Desistir</button>
+    </div>
+    <div class="container list"  v-if="arrayList.length != 0">
+      <div class="listItems" v-for="l in arrayList">
+        <p>{{l}}</p>
+      </div>
     </div>
   </body>
 
